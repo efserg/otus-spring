@@ -1,0 +1,4 @@
+application:
+    title: "OTUS Spring course's application"
+    version: 0.1
+    locale: en
