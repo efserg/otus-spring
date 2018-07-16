@@ -1,1 +1,16 @@
-1;
+1,1,ans1.1,true
+2,1,ans1.2,false
+3,1,ans1.3,false
+4,1,ans1.4,true
+5,2,ans2.1,true
+6,2,ans2.2,false
+7,2,ans2.3,false
+8,3,ans3.1,false
+9,3,ans3.2,false
+10,3,ans3.3,false
+11,3,ans3.4,true
+12,3,ans3.5,false
+13,4,ans4.1,false
+14,4,ans4.2,true
+15,5,ans5.1,false
+16,5,ans5.2,true
