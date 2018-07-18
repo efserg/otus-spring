@@ -1,1 +1,25 @@
-1;
+1,1,cp       ,false
+2,1,cd       ,true
+3,1,access   ,false
+4,1,acs      ,false
+5,1,cdr      ,false
+6,2,clr      ,false
+7,2,clrwin   ,false
+8,2,cd       ,false
+9,2,clear    ,true
+10,2,clearit  ,false
+11,3,list     ,false
+12,3,listfiles,false
+13,3,ls       ,true
+14,3,lst      ,false
+15,3,listout  ,false
+16,4,pwd      ,true
+17,4,dir      ,false
+18,4,directory,false
+19,4,showdir  ,false
+20,4,dirpwd   ,false
+21,5,lgt      ,false
+22,5,logout   ,true
+23,5,logot    ,false
+24,5,out      ,false
+25,5,lout     ,false
