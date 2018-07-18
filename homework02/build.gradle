@@ -13,6 +13,7 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.8.0-beta2'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.3.0-alpha4'
     compile group:'org.apache.commons', name: 'commons-csv', version: '1.5'
+    compile group: 'org.springframework.shell', name: 'spring-shell-standard', version: '2.0.1.RELEASE'
 
     compileOnly("org.projectlombok:lombok:1.18.0")
 

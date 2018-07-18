@@ -31,29 +31,29 @@ public class QuizCsvReader implements QuizReader {
     }
 
     @Override
-    public List<Question> getQuestions() throws IOException {
+    public List<Question> readQuestions() throws IOException {
         final Map<Long, List<Answer>> answersByQuestionId = CSVParser.parse(ResourceUtils.getFile(answerPath), Charset.forName("UTF-8"), CSVFormat.DEFAULT).getRecords().stream().map(this::csvToAnswer).collect(Collectors.groupingBy(Answer::getQuestionId));
 
         return CSVParser.parse(ResourceUtils.getFile(questionPath), Charset.forName("UTF-8"), CSVFormat.DEFAULT).getRecords().stream().map(csv -> csvToQuestion(answersByQuestionId, csv)).collect(Collectors.toList());
     }
 
     private Question csvToQuestion(Map<Long, List<Answer>> answersByQuestionId, CSVRecord csv) {
-        Long id = Long.valueOf(csv.get(0));
+        Long id = Long.parseLong(csv.get(0));
         return new Question(
                 id,
                 csv.get(1),
-                Double.valueOf(csv.get(2)),
-                QuestionType.valueOf(csv.get(3).toUpperCase()),
+                Double.parseDouble(csv.get(2)),
+                QuestionType.valueOf(csv.get(3).trim().toUpperCase()),
                 answersByQuestionId.getOrDefault(id, Collections.emptyList())
         );
     }
 
     private Answer csvToAnswer(CSVRecord csv) {
-        Long id = Long.valueOf(csv.get(0));
+        Long id = Long.parseLong(csv.get(0));
         return new Answer(
                 id,
-                Long.valueOf(csv.get(1)),
+                Long.parseLong(csv.get(1)),
                 csv.get(2),
-                Boolean.valueOf(csv.get(3)));
+                Boolean.parseBoolean(csv.get(3)));
     }
 }

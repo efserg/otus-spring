@@ -1,5 +1,5 @@
-1,qu1,1,CHOICE
-2,qu2,1,CHOICE
-3,qu3,3,CHOICE
-4,qu4,2,CHOICE
-5,qu5,1,CHOICE
+1,What command followed by the directory name is used to access that specific directory?   ,1,CHOICE
+2,What command is used to clear up the command prompt window?                              ,1,CHOICE
+3,How would you show a list of files and directories that are inside the current directory.,3,CHOICE
+4,What command shows the directory you are in?                                             ,2,CHOICE
+5,What command allows you to logout of the system?                                         ,1,CHOICE

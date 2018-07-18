@@ -8,9 +8,10 @@ import org.springframework.core.env.Environment;
 import space.efremov.otus.spring.domain.Question;
 import space.efremov.otus.spring.domain.QuizResult;
 import space.efremov.otus.spring.service.QuizReader;
+import space.efremov.otus.spring.service.QuizResultProcessor;
 import space.efremov.otus.spring.service.QuizService;
+import space.efremov.otus.spring.service.QuizUtils;
 
-import java.io.IOException;
 import java.util.List;
 
 @ComponentScan
@@ -18,15 +19,23 @@ import java.util.List;
 @PropertySource("classpath:application.yml")
 public class Application {
 
-    @Autowired
-    private Environment env;
+//    private final Environment env;
+//
+//    @Autowired
+//    public Application(Environment env) {
+//        this.env = env;
+//    }
 
     public static void main(String[] args) {
         try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Application.class)) {
-            QuizReader quizReader = context.getBean(QuizReader.class);
-            QuizService quizService = context.getBean(QuizService.class);
-            List<Question> quiz = quizReader.getQuestions();
-            QuizResult quizResult = quizService.process(quiz);
+            final QuizReader quizReader = context.getBean(QuizReader.class);
+            final QuizService quizService = context.getBean(QuizService.class);
+            final QuizUtils quizUtils = context.getBean(QuizUtils.class);
+            final QuizResultProcessor quizResultProcessor = context.getBean(QuizResultProcessor.class);
+            final List<Question> questions = quizReader.readQuestions();
+            final List<Question> quiz = quizUtils.getQuiz(questions);
+            final QuizResult quizResult = quizService.process(quiz);
+            quizResultProcessor.process(quizResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -34,8 +43,8 @@ public class Application {
 
     @Bean
     public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource ms = new ReloadableResourceBundleMessageSource();
-        ms.setBasename("/i18n/bundle");
+        final ReloadableResourceBundleMessageSource ms = new ReloadableResourceBundleMessageSource();
+        ms.setBasename("/i18n/messages");
         ms.setDefaultEncoding("UTF-8");
         return ms;
     }
