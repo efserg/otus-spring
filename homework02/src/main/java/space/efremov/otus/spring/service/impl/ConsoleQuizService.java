@@ -4,6 +4,7 @@ import lombok.val;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
+import space.efremov.otus.spring.aspect.Loggable;
 import space.efremov.otus.spring.domain.Answer;
 import space.efremov.otus.spring.domain.Question;
 import space.efremov.otus.spring.domain.QuizResult;
@@ -34,6 +35,7 @@ public class ConsoleQuizService implements QuizService {
     }
 
     @Override
+    @Loggable
     public QuizResult process(List<Question> questions) throws IOException {
         sayHello();
         val student = createUser();

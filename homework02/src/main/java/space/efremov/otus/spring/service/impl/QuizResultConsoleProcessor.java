@@ -3,6 +3,7 @@ package space.efremov.otus.spring.service.impl;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
+import space.efremov.otus.spring.aspect.Loggable;
 import space.efremov.otus.spring.domain.QuizResult;
 import space.efremov.otus.spring.service.QuizResultProcessor;
 
@@ -23,6 +24,7 @@ public class QuizResultConsoleProcessor implements QuizResultProcessor {
 
 
     @Override
+    @Loggable
     public void process(QuizResult result) {
         System.out.println(ms.getMessage("quiz_result", new String[]{result.getStudent().toString()}, locale));
         System.out.println(result.getDateTime());

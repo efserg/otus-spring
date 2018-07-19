@@ -6,6 +6,7 @@ import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
+import space.efremov.otus.spring.aspect.Loggable;
 import space.efremov.otus.spring.domain.Answer;
 import space.efremov.otus.spring.domain.Question;
 import space.efremov.otus.spring.domain.QuestionType;
@@ -31,6 +32,7 @@ public class QuizCsvReader implements QuizReader {
     }
 
     @Override
+    @Loggable
     public List<Question> readQuestions() throws IOException {
         final Map<Long, List<Answer>> answersByQuestionId = CSVParser.parse(ResourceUtils.getFile(answerPath), Charset.forName("UTF-8"), CSVFormat.DEFAULT).getRecords().stream().map(this::csvToAnswer).collect(Collectors.groupingBy(Answer::getQuestionId));
 

@@ -1,10 +1,8 @@
 package space.efremov.otus.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.core.env.Environment;
 import space.efremov.otus.spring.domain.Question;
 import space.efremov.otus.spring.domain.QuizResult;
 import space.efremov.otus.spring.service.QuizReader;
@@ -17,14 +15,8 @@ import java.util.List;
 @ComponentScan
 @Configuration
 @PropertySource("classpath:application.yml")
+@EnableAspectJAutoProxy
 public class Application {
-
-//    private final Environment env;
-//
-//    @Autowired
-//    public Application(Environment env) {
-//        this.env = env;
-//    }
 
     public static void main(String[] args) {
         try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Application.class)) {
