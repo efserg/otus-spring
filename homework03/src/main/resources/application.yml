@@ -1,0 +1,14 @@
+application:
+    title: "OTUS Spring course's application"
+    version: 0.1
+    locale: en
+
+quiz:
+  path:
+    questions: classpath:quiz/en/questions.csv
+    answers: classpath:quiz/en/answers.csv
+  params:
+    answer_shuffle: true
+    question_shuffle: true
+    question_count: 3
+    succeed_percentage: 75
