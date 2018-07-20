@@ -1,0 +1,49 @@
+{
+  "properties": [
+    {
+      "name": "application.title",
+      "type": "java.lang.String",
+      "description": "Application title."
+    },
+    {
+      "name": "application.version",
+      "type": "java.lang.String",
+      "description": "Application version."
+    },
+    {
+      "name": "application.locale",
+      "type": "java.lang.String",
+      "description": "Application locale."
+    },
+    {
+      "name": "quiz.config.answer.shuffle",
+      "type": "java.lang.String",
+      "description": "Must application shuffle answers."
+    },
+    {
+      "name": "quiz.config.question.shuffle",
+      "type": "java.lang.String",
+      "description": "Must application shuffle questions."
+    },
+    {
+      "name": "quiz.config.question.count",
+      "type": "java.lang.String",
+      "description": "How many questions in the quiz."
+    },
+    {
+      "name": "quiz.config.question.succeed-percentage",
+      "type": "java.lang.String",
+      "description": "How many percentage need for passed test."
+    },
+    {
+      "name": "quiz.config.path",
+      "type": "java.lang.String",
+      "description": "Description for quiz.config.path."
+    },
+    {
+      "name": "quiz.config.filename",
+      "type": "java.lang.String",
+      "description": "Description for quiz.config.filename."
+    }
+  ]
+}
