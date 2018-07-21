@@ -43,6 +43,7 @@ public class QuizConfig {
     }
 
     public static class Answer {
+
         private boolean shuffle;
 
         public boolean isShuffle() {
@@ -57,7 +58,9 @@ public class QuizConfig {
     public static class Question {
 
         private boolean shuffle;
+
         private int count;
+
         private double succeedPercentage;
 
         public double getSucceedPercentage() {

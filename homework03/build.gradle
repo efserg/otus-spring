@@ -26,7 +26,12 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
-    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.6'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6'
+    compile group: 'org.springframework', name: 'spring-aop', version: springVersion
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.1'
+
     compileOnly("org.projectlombok:lombok:1.18.0")
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
