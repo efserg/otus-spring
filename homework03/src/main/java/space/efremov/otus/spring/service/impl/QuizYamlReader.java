@@ -1,9 +1,11 @@
 package space.efremov.otus.spring.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.CollectionLikeType;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ResourceUtils;
 import space.efremov.otus.spring.aspect.Loggable;
 import space.efremov.otus.spring.config.ApplicationConfig;
 import space.efremov.otus.spring.config.QuizConfig;
@@ -11,6 +13,7 @@ import space.efremov.otus.spring.domain.Question;
 import space.efremov.otus.spring.service.QuizReader;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -32,18 +35,8 @@ public class QuizYamlReader implements QuizReader {
     public List<Question> readQuestions() throws IOException {
         final String quizFilename = quizConfig.getQuizFilename(appConfig.getLocale());
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        return mapper.readValue(quizFilename, Quiz.class).getQuestions();
+        final CollectionLikeType collectionLikeType = mapper.getTypeFactory().constructCollectionLikeType(List.class, Question.class);
+        return mapper.readValue(ResourceUtils.getFile(quizFilename), collectionLikeType);
     }
 
-    private static final class Quiz {
-        private List<Question> questions;
-
-        public List<Question> getQuestions() {
-            return questions;
-        }
-
-        public void setQuestions(List<Question> questions) {
-            this.questions = questions;
-        }
-    }
 }

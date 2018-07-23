@@ -1,72 +1,71 @@
-quiz:
-  - text: Какая из перечисленных команд позволяет перейти в выбранную директорию?
-    weight: 1
-    type: CHOICE
-    answers:
-      - text: cp
-        correct: false
-      - text: cd
-        correct: true
-      - text: access
-        correct: false
-      - text: acs
-        correct: false
-      - text: cdr
-        correct: false
-  - text: Какая команда очистит консоль?
-    weght: 1
-    type: CHOICE
-    answers:
-      - text: clr
-        correct: false
-      - text: clrwin
-        correct: false
-      - text: cd
-        correct: false
-      - text: clear
-        correct: true
-      - text: clearit
-        correct: false
-  - text: Как вывести список файлов и директорий в текущей директории?
-    weght: 1
-    type: CHOICE
-    answers:
-      - text: list
-        correct: false
-      - text: listfiles
-        correct: true
-      - text: ls
-        correct: true
-      - text: lst
-        correct: false
-      - text: listout
-        correct: false
+- text: Какая из перечисленных команд позволяет перейти в выбранную директорию?
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: cp
+      correct: false
+    - text: cd
+      correct: true
+    - text: access
+      correct: false
+    - text: acs
+      correct: false
+    - text: cdr
+      correct: false
+- text: Какая команда очистит консоль?
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: clr
+      correct: false
+    - text: clrwin
+      correct: false
+    - text: cd
+      correct: false
+    - text: clear
+      correct: true
+    - text: clearit
+      correct: false
+- text: Как вывести список файлов и директорий в текущей директории?
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: list
+      correct: false
+    - text: listfiles
+      correct: true
+    - text: ls
+      correct: true
+    - text: lst
+      correct: false
+    - text: listout
+      correct: false
 
-  - text: Как отобразить текущую директорию?
-    weght: 1
-    type: CHOICE
-    answers:
-      - text: pwd
-        correct: true
-      - text: dir
-        correct: false
-      - text: directory
-        correct: false
-      - text: showdir
-        correct: false
-      - text: dirpwd
-        correct: false
-  - text: Какая команда позволит выйти из системы?
-    weght: 1
-    type: CHOICE
-    answers:
-      - text: lqt
-        correct: false
-      - text: logout
-        correct: true
-      - text: logot
-        correct: false
-      - text: out
-        correct: false
-      - text: lout
-        correct: false
+- text: Как отобразить текущую директорию?
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: pwd
+      correct: true
+    - text: dir
+      correct: false
+    - text: directory
+      correct: false
+    - text: showdir
+      correct: false
+    - text: dirpwd
+      correct: false
+- text: Какая команда позволит выйти из системы?
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: lqt
+      correct: false
+    - text: logout
+      correct: true
+    - text: logot
+      correct: false
+    - text: out
+      correct: false
+    - text: lout
+      correct: false

@@ -9,10 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import space.efremov.otus.spring.domain.Question;
 import space.efremov.otus.spring.domain.QuizResult;
-import space.efremov.otus.spring.service.QuizReader;
-import space.efremov.otus.spring.service.QuizResultProcessor;
-import space.efremov.otus.spring.service.QuizService;
-import space.efremov.otus.spring.service.QuizUtils;
+import space.efremov.otus.spring.service.*;
 
 import java.util.List;
 
@@ -21,6 +18,8 @@ public class Application {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+        final QuizStarter quizStarter = context.getBean(QuizStarter.class);
+        quizStarter.start();
     }
 
     @Bean
