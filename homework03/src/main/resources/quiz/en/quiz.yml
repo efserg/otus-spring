@@ -1,0 +1,70 @@
+- text: What command followed by the directory name is used to access that specific directory?
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: cp
+      correct: false
+    - text: cd
+      correct: true
+    - text: access
+      correct: false
+    - text: acs
+      correct: false
+    - text: cdr
+      correct: false
+- text: What command is used to clear up the command prompt window?
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: clr
+      correct: false
+    - text: clrwin
+      correct: false
+    - text: cd
+      correct: false
+    - text: clear
+      correct: true
+    - text: clearit
+      correct: false
+- text: How would you show a list of files and directories that are inside the current directory.
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: list
+      correct: false
+    - text: listfiles
+      correct: true
+    - text: ls
+      correct: true
+    - text: lst
+      correct: false
+    - text: listout
+      correct: false
+- text: What command shows the directory you are in?
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: pwd
+      correct: true
+    - text: dir
+      correct: false
+    - text: directory
+      correct: false
+    - text: showdir
+      correct: false
+    - text: dirpwd
+      correct: false
+- text: What command allows you to logout of the system?
+  weight: 1
+  type: CHOICE
+  answers:
+    - text: lqt
+      correct: false
+    - text: logout
+      correct: true
+    - text: logot
+      correct: false
+    - text: out
+      correct: false
+    - text: lout
+      correct: false
