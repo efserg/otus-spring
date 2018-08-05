@@ -29,6 +29,7 @@ dependencies {
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.6'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6'
     compile group: 'org.springframework', name: 'spring-aop', version: springVersion
+    compile('org.springframework.shell:spring-shell-starter:2.0.1.RELEASE')
     compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.1'
 
     compileOnly("org.projectlombok:lombok:1.18.0")

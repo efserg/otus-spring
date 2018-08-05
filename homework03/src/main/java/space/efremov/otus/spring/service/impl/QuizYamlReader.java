@@ -13,7 +13,6 @@ import space.efremov.otus.spring.domain.Question;
 import space.efremov.otus.spring.service.QuizReader;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -33,7 +32,7 @@ public class QuizYamlReader implements QuizReader {
     @Override
     @Loggable
     public List<Question> readQuestions() throws IOException {
-        final String quizFilename = quizConfig.getQuizFilename(appConfig.getLocale());
+        final String quizFilename = quizConfig.calcQuizFilename(appConfig.getLocale());
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         final CollectionLikeType collectionLikeType = mapper.getTypeFactory().constructCollectionLikeType(List.class, Question.class);
         return mapper.readValue(ResourceUtils.getFile(quizFilename), collectionLikeType);

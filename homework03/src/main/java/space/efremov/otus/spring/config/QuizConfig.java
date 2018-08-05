@@ -14,7 +14,7 @@ public class QuizConfig {
     private String path;
     private String filename;
 
-    public String getQuizFilename(Locale locale) {
+    public String calcQuizFilename(Locale locale) {
         return String.format("%s/%s/%s", path, locale.getLanguage().toLowerCase(), filename);
     }
 
